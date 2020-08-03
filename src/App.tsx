@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from 'react';
 
-import LadingPage from './pages/Landing';
+import Routes from './Router';
 
 import './assets/styles/global.css'
 
 const App: FunctionComponent = () => {
     return (
         <div className="App">
-            <LadingPage />
+            <Routes />
         </div>
     );
 };
