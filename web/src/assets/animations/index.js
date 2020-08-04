@@ -4,7 +4,22 @@ export const pageTransition = {
     duration: 0.5,
 }
 
-export const teacherVariants = {
+// export const teacherVariants = {
+//     initial: {
+//         opacity: 0,
+//         y: "-100vh"
+//     },
+//     in: {
+//         opacity: 1,
+//         y: "0"
+//     },
+//     out: {
+//         opacity: 0,
+//         y: "-100vh"
+//     },
+// }
+
+export const landingVariants = {
     initial: {
         opacity: 0,
         y: "100vh"
@@ -19,7 +34,22 @@ export const teacherVariants = {
     },
 }
 
-export const landingVariants = {
+export const mainVariants = {
+    initial: {
+        opacity: 0,
+        y: "-100vh"
+    },
+    in: {
+        opacity: 1,
+        y: "0"
+    },
+    out: {
+        opacity: 0,
+        y: "100vh"
+    },
+}
+
+export const headerBackgroundVariants = {
     initial: {
         opacity: 0,
         y: "100vh"

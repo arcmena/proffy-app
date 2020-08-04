@@ -3,16 +3,16 @@ import { motion } from 'framer-motion';
 
 import { Header, TeacherCard } from '../../components';
 
-import { teacherVariants, pageTransition } from '../../assets/animations';
+import { mainVariants, pageTransition } from '../../assets/animations';
 
 import './styles.css'
 
 const TeacherList: FunctionComponent = () => {
     return (
-        <motion.div id="page-teacher-list" className="container" initial="out" animate="in" exit="out" variants={teacherVariants} transition={pageTransition}>
+        // <motion.div id="page-teacher-list" className="container" initial="out" animate="in" exit="out" variants={teacherVariants} transition={pageTransition}>
+        <div id="page-teacher-list" className="container">
             <Header title="Estes são os proffys disponíveis.">
                 <form id="search-teachers">
-
                     <div className="input-block">
                         <label htmlFor="subject">Matéria</label>
                         <input type="text" name="subject" id="subject" />
@@ -29,13 +29,13 @@ const TeacherList: FunctionComponent = () => {
                     </div>
                 </form>
             </Header>
-            <main>
+            <motion.main initial="out" animate="in" exit="out" variants={mainVariants} transition={pageTransition}>
                 <TeacherCard />
                 <TeacherCard />
                 <TeacherCard />
                 <TeacherCard />
-            </main>
-        </motion.div>
+            </motion.main>
+        </div>
     );
 }
 
