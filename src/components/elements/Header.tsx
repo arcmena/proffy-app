@@ -8,7 +8,7 @@ import { HeaderProps } from '../../types/ComponentTypes';
 
 import './Header.css';
 
-const Header: FunctionComponent<HeaderProps> = ({ title }) => {
+const Header: FunctionComponent<HeaderProps> = ({ title, children }) => {
     return (
         <header className="page-header">
             <div className="top-bar-container">
@@ -20,6 +20,7 @@ const Header: FunctionComponent<HeaderProps> = ({ title }) => {
 
             <div className="header-content">
                 <strong>{title}</strong>
+                {children}
             </div>
         </header>
     );
