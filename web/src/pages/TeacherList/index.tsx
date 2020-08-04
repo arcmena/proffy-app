@@ -5,11 +5,10 @@ import { Header, TeacherCard } from '../../components';
 
 import { mainVariants, pageTransition } from '../../assets/animations';
 
-import './styles.css'
+import './styles.css';
 
 const TeacherList: FunctionComponent = () => {
     return (
-        // <motion.div id="page-teacher-list" className="container" initial="out" animate="in" exit="out" variants={teacherVariants} transition={pageTransition}>
         <div id="page-teacher-list" className="container">
             <Header title="Estes são os proffys disponíveis.">
                 <form id="search-teachers">
@@ -37,6 +36,6 @@ const TeacherList: FunctionComponent = () => {
             </motion.main>
         </div>
     );
-}
+};
 
 export default TeacherList;
