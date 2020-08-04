@@ -1,12 +1,15 @@
 import React, { FunctionComponent } from 'react';
+import { motion } from 'framer-motion';
 
 import { Header, TeacherCard } from '../../components';
+
+import { teacherVariants, pageTransition } from '../../assets/animations';
 
 import './styles.css'
 
 const TeacherList: FunctionComponent = () => {
     return (
-        <div id="page-teacher-list" className="container">
+        <motion.div id="page-teacher-list" className="container" initial="out" animate="in" exit="out" variants={teacherVariants} transition={pageTransition}>
             <Header title="Estes são os proffys disponíveis.">
                 <form id="search-teachers">
 
@@ -32,7 +35,7 @@ const TeacherList: FunctionComponent = () => {
                 <TeacherCard />
                 <TeacherCard />
             </main>
-        </div>
+        </motion.div>
     );
 }
 
