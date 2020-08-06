@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { motion } from 'framer-motion';
 
-import { Header, Input, TextArea } from '../../components';
+import { Header, Input, TextArea, Select, Subjects, Days } from '../../components';
 
 import warningIcon from '../../assets/icons/warning.svg';
 
@@ -10,6 +10,12 @@ import { mainVariants, pageTransition } from '../../assets/animations';
 import './styles.css';
 
 const TeacherForm: FunctionComponent = () => {
+    const [schedule, setSchedule] = useState([{ week_day: 0, from: '', to: '' }]);
+
+    const handleAddSchedule = () => {
+        setSchedule([...schedule, { week_day: 0, from: '', to: '' }]);
+    };
+
     return (
         <div id="page-teacher-form" className="container">
             <Header
@@ -28,8 +34,25 @@ const TeacherForm: FunctionComponent = () => {
 
                 <fieldset>
                     <legend>Sobre a aula</legend>
-                    <Input name="subject" label="Matéria" />
+                    <Select name="subject" label="Matéria" options={Subjects} />
                     <Input name="cost" label="Custo da sua hora por aula" />
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        Horários disponíveis{' '}
+                        <button type="button" onClick={handleAddSchedule}>
+                            {' '}
+                            + Novo horário
+                        </button>
+                    </legend>
+                    {schedule.map((item) => (
+                        <div className="schedule-item" key={item.week_day}>
+                            <Select name="week_day" label="Dia da semana" options={Days} />
+                            <Input name="from" label="Das" type="time" />
+                            <Input name="to" label="Até" type="time" />
+                        </div>
+                    ))}
                 </fieldset>
 
                 <footer>

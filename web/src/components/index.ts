@@ -4,4 +4,6 @@ import Input from './input/Input';
 import TextArea from './input/TextArea';
 import Select from './input/Select';
 
-export { Header, TeacherCard, Input, TextArea, Select };
+import { Days, Subjects } from './options';
+
+export { Header, TeacherCard, Input, TextArea, Select, Subjects, Days };
