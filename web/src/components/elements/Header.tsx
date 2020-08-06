@@ -11,9 +11,16 @@ import { HeaderProps } from '../../types/ComponentTypes';
 
 import './Header.css';
 
-const Header: FunctionComponent<HeaderProps> = ({ title, children }) => {
+const Header: FunctionComponent<HeaderProps> = ({ title, description, children }) => {
     return (
-        <motion.header className="page-header" initial="out" animate="in" exit="out" variants={headerBackgroundVariants} transition={pageTransition}>
+        <motion.header
+            className="page-header"
+            initial="out"
+            animate="in"
+            exit="out"
+            variants={headerBackgroundVariants}
+            transition={pageTransition}
+        >
             <div className="top-bar-container">
                 <Link to="/">
                     <img src={backIcon} alt="Voltar" />
@@ -23,10 +30,11 @@ const Header: FunctionComponent<HeaderProps> = ({ title, children }) => {
 
             <div className="header-content">
                 <strong>{title}</strong>
+                {description && <p>{description}</p>}
                 {children}
             </div>
         </motion.header>
     );
-}
+};
 
 export default Header;

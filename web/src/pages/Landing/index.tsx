@@ -11,12 +11,19 @@ import purpleHeart from '../../assets/icons/purple-heart.svg';
 
 import { landingVariants } from '../../assets/animations';
 
-import './styles.css'
+import './styles.css';
 
 const Landing: FunctionComponent = () => {
     return (
         <div id="page-landing">
-            <motion.div id="page-landing-content" className="container" initial="out" animate="in" exit="out" variants={landingVariants}>
+            <motion.div
+                id="page-landing-content"
+                className="container"
+                initial="out"
+                animate="in"
+                exit="out"
+                variants={landingVariants}
+            >
                 <div className="logo-container">
                     <img src={logoImg} alt="Logo" />
                     <h2>Sua plataforma de estudos online.</h2>
@@ -38,6 +45,6 @@ const Landing: FunctionComponent = () => {
             </motion.div>
         </div>
     );
-}
+};
 
 export default Landing;

@@ -36,5 +36,6 @@ module.exports = {
                 endOfLine: 'auto',
             },
         ],
+        'react/jsx-props-no-spreading': [{ html: 'ignore', exceptions: ['input'] }],
     },
 };
